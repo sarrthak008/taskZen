@@ -24,8 +24,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.use(cors({
-  origin: "*",
-  Credential: true
+  origin: ["http://localhost:5173","*"],
+  credentials: true
 }))
 
 
@@ -37,7 +37,7 @@ app.use(session({
    resave:false,
    saveUninitialized:true,
    cookie:{
-    httpOnly:true,
+    httpOnly:false,
     maxAge:7*24*6000*60*60*24 
    }
 }))
